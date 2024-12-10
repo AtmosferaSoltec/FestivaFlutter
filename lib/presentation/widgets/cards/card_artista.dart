@@ -1,9 +1,12 @@
+import 'package:festiva_flutter/domain/model/artista.dart';
 import 'package:flutter/material.dart';
 import '../../theme/colors.dart';
 
 class CardArtista extends StatelessWidget {
+  final Artista artista;
   const CardArtista({
     super.key,
+    required this.artista,
   });
 
   @override
@@ -13,16 +16,16 @@ class CardArtista extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child: Image.network(
-            "https://phantom-marca.unidadeditorial.es/bdde783211f028e8b6a132a0ae62a810/resize/828/f/jpg/assets/multimedia/imagenes/2022/09/20/16637014675433.jpg",
-            width: 64,
-            height: 64,
+            artista.urlFoto,
+            width: 100,
+            height: 100,
             fit: BoxFit.cover,
           ),
         ),
-        SizedBox(height: 4),
+        const SizedBox(height: 4),
         Text(
-          "Artista 1",
-          style: TextStyle(fontSize: 12, color: colorT1),
+          artista.nombre,
+          style: const TextStyle(fontSize: 12, color: colorT1),
         )
       ],
     );

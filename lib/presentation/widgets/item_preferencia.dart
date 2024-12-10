@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../theme/colors.dart';
 import '../theme/styles.dart';
 
+// ignore: must_be_immutable
 class ItemPreferencia extends StatelessWidget {
   IconData icon;
   String title;

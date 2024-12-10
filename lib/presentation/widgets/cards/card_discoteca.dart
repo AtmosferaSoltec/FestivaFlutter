@@ -1,6 +1,6 @@
 import 'package:festiva_flutter/domain/model/discoteca.dart';
+import 'package:festiva_flutter/presentation/theme/colors.dart';
 import 'package:flutter/material.dart';
-import '../../theme/colors.dart';
 
 class CardDiscoteca extends StatelessWidget {
   final Discoteca discoteca;
@@ -32,7 +32,7 @@ class CardDiscoteca extends StatelessWidget {
                     child: Image.network(
                         width: double.infinity,
                         height: 132,
-                        discoteca.portada,
+                        discoteca.url_portada,
                         fit: BoxFit.fitWidth),
                   ),
                   Positioned(
@@ -63,7 +63,7 @@ class CardDiscoteca extends StatelessWidget {
               padding: const EdgeInsets.all(12),
               child: Row(
                 children: [
-                  Image.network(width: 42, height: 42, discoteca.logo),
+                  Image.network(width: 42, height: 42, discoteca.url_logo),
                   const SizedBox(
                     width: 12,
                   ),

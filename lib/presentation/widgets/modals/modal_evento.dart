@@ -117,11 +117,11 @@ class ModalEvento extends StatelessWidget {
                     SizedBox(height: 12),
                     Row(
                       children: [
-                        CardArtista(),
-                        SizedBox(width: 12),
-                        CardArtista(),
-                        SizedBox(width: 12),
-                        CardArtista(),
+                        //CardArtista(),
+                        // SizedBox(width: 12),
+                        // CardArtista(),
+                        // SizedBox(width: 12),
+                        // CardArtista(),
                       ],
                     )
                   ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../theme/styles.dart';
 
+// ignore: must_be_immutable
 class TitleMenu extends StatelessWidget {
   String title;
   String subtitle;
