@@ -2,6 +2,7 @@ import 'package:festiva_flutter/core/network/network.dart';
 import 'package:festiva_flutter/data/mappers/mapper.dart';
 import 'package:festiva_flutter/domain/repository/repository.dart';
 import 'package:festiva_flutter/data/repository_impl/impl.dart';
+import 'package:festiva_flutter/domain/usecase/use_case.dart';
 import 'package:festiva_flutter/presentation/providers/provider.dart';
 
 import 'package:festiva_flutter/presentation/utils/constants.dart';
@@ -28,7 +29,13 @@ void setup() {
       () => DiscotecaRepositoryImpl(api: getIt(), discotecaMapper: getIt()));
 
   // Providers
-  getIt.registerFactory<ArtistaProvider>(() => ArtistaProvider(repo: getIt()));
+  getIt.registerFactory<ArtistaProvider>(
+      () => ArtistaProvider(getAllArtistasUseCase: getIt()));
   getIt.registerFactory<DiscotecaProvider>(
       () => DiscotecaProvider(repo: getIt()));
+
+  // Use Case
+  getIt.registerLazySingleton<GetAllArtistasUseCase>(
+    () => GetAllArtistasUseCase(getIt<ArtistaRepository>()),
+  );
 }

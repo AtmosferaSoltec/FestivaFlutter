@@ -1,11 +1,12 @@
 import 'package:festiva_flutter/domain/model/artista.dart';
-import 'package:festiva_flutter/domain/repository/artista_repository.dart';
+import 'package:festiva_flutter/domain/usecase/use_case.dart';
+
 import 'package:flutter/material.dart';
 
 class ArtistaProvider extends ChangeNotifier {
-  final ArtistaRepository repo;
+  final GetAllArtistasUseCase getAllArtistasUseCase;
 
-  ArtistaProvider({required this.repo});
+  ArtistaProvider({required this.getAllArtistasUseCase});
 
   List<Artista> _artistas = [];
   List<Artista> get artistas => _artistas;
@@ -22,7 +23,7 @@ class ArtistaProvider extends ChangeNotifier {
     notifyListeners();
 
     try {
-      _artistas = await repo.getAll();
+      _artistas = await getAllArtistasUseCase();
     } catch (error) {
       _errorMessage = 'Failed to load user';
     } finally {
