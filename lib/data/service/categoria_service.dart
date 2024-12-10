@@ -1,14 +1,13 @@
+import 'package:festiva_flutter/presentation/utils/constants.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class ApiArtista {
-  final String baseUrl;
+class CategoriaService {
+  final String baseUrl = Constants.apiUrl;
 
-  ApiArtista({required this.baseUrl});
-
-  Future<List<dynamic>> get() async {
+  Future<List<dynamic>> getAll() async {
     try {
-      final url = Uri.parse('$baseUrl/artista/test');
+      final url = Uri.parse('$baseUrl/cat-evento');
       final response = await http.get(url);
 
       if (response.statusCode == 200) {

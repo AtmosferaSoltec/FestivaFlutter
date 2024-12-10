@@ -1,4 +1,4 @@
-import 'package:festiva_flutter/data/dtos/discoteca_dto.dart';
+import 'package:festiva_flutter/data/dto/discoteca_dto.dart';
 import 'package:festiva_flutter/domain/model/discoteca.dart';
 
 class DiscotecaMapper {

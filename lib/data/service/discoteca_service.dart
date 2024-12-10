@@ -1,10 +1,9 @@
+import 'package:festiva_flutter/presentation/utils/constants.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class ApiDiscoteca {
-  final String baseUrl;
-
-  ApiDiscoteca({required this.baseUrl});
+class DiscotecaService {
+  final String baseUrl = Constants.apiUrl;
 
   Future<List<dynamic>> get() async {
     try {

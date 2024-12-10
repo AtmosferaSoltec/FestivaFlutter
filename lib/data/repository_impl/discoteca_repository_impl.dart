@@ -1,14 +1,11 @@
-import 'package:festiva_flutter/core/network/network.dart';
-import 'package:festiva_flutter/data/mappers/mapper.dart';
-
+import 'package:festiva_flutter/data/service/service.dart';
 import 'package:festiva_flutter/domain/model/discoteca.dart';
 import 'package:festiva_flutter/domain/repository/discoteca_repository.dart';
 
 class DiscotecaRepositoryImpl implements DiscotecaRepository {
-  final ApiDiscoteca api;
-  final DiscotecaMapper discotecaMapper;
+  final DiscotecaService api;
 
-  DiscotecaRepositoryImpl({required this.api, required this.discotecaMapper});
+  DiscotecaRepositoryImpl({required this.api});
 
   @override
   Future<List<Discoteca>> getAll() {

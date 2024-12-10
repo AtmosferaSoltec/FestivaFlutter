@@ -1,15 +1,17 @@
 import 'package:festiva_flutter/data/di/injector.dart';
 import 'package:festiva_flutter/presentation/pages/menu_page.dart';
-import 'package:festiva_flutter/presentation/providers/artista_provider.dart';
+import 'package:festiva_flutter/presentation/providers/provider.dart';
 import 'package:festiva_flutter/presentation/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
   setup();
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => getIt<ArtistaProvider>()),
+      ChangeNotifierProvider(create: (_) => getIt<DiscotecaProvider>()),
+      ChangeNotifierProvider(create: (_) => getIt<CategoriaProvider>()),
     ],
     child: const MyApp(),
   ));

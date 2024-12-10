@@ -15,10 +15,8 @@ class _ArtistasPageState extends State<ArtistasPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() {
-      final artistaProvider =
-          Provider.of<ArtistaProvider>(context, listen: false);
-      artistaProvider.listar();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<ArtistaProvider>(context, listen: false).listar();
     });
   }
 

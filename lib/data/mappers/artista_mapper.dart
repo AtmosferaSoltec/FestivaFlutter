@@ -1,4 +1,4 @@
-import 'package:festiva_flutter/data/dtos/artista_dto.dart';
+import 'package:festiva_flutter/data/dto/artista_dto.dart';
 import 'package:festiva_flutter/domain/model/artista.dart';
 
 class ArtistaMapper {
